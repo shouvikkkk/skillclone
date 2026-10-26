@@ -73,7 +73,7 @@ class TestVerdicts(unittest.TestCase):
         member = _by_path(verdict_for_cluster([old, newest]))["old"]
         self.assertEqual(member.verdict, "STALE")
         self.assertEqual(member.missing_count, 18)
-        self.assertLessEqual(len(member["missing_lines"]), 10) if False else self.assertLessEqual(len(member.missing_lines), 10)
+        self.assertLessEqual(len(member.missing_lines), 10)
 
     def test_newest_member_itself_is_current(self):
         newest = _skill("new", "alpha\nbeta\ngamma", 2000.0)
